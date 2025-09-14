@@ -1,0 +1,80 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+
+
+{% block content %}
+{# Macro to help output errors: #}
+{% macro errorList(errors) %}
+    {% if errors %}
+        {{ ul(errors, { class: 'errors' }) }}
+    {% endif %}
+{% endmacro %}
+<main
+<div class="py-8 my-4">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-1 col-xl-10 col-12 ">
+                <div class="row px-3 pt-3 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border smooth-shadow-sm">
+                    <div class="col-lg-6 p-4 p-md-6 pt-lg-0">
+                        <h1 class="display-4 fw-bold lh-1 mb-3">Get early access</h1>
+                        <p class="lead mb-5">We are opening October 1st 2025. Sign up to the
+                            waiting list to be the first to know when booking opens -
+                            stay in the loop!
+                        </p>
+                        
+{# Default value for the `entry` variable: #}
+{% set entry = entry ?? null %}
+
+<form method="post" action="" class="needs-validation " novalidate="" accept-charset="UTF-8">
+  
+    {# Hidden inputs required for the form to work: #}
+    {{ csrfInput() }}
+    {{ actionInput('guest-entries/save') }}
+    
+    {# Section for new entries: #}
+    {{ hiddenInput('sectionUid', 'e6ff9992-97aa-4cd6-b9ea-5743266547cb') }}
+
+    {# Custom redirect URI: #}
+    {{ redirectInput('/enquiries/submitted') }}
+
+    
+
+    {# Entry properties and custom fields: #}
+    <!-- Input -->
+    <div class="mb-5">
+      <label class="form-label" for="title">Name</label>
+      {{ input('text', 'title', entry ? entry.title, { id: 'title', class:'form-control',placeholder:'Your full name',required:'required' }) }}
+      {{ entry ? _self.errorList(entry.getErrors('title')) }}
+    </div>
+    
+    <div class="mb-5">
+      <label class="form-label" for="email">Your contact email</label>
+      {{ tag('input', {
+        email: entry ? entry.email,
+        id: 'email',
+        class:'form-control',
+        required:'required',
+        name: 'fields[email]',
+        type: 'email'
+    }) }}
+    {{ entry ? _self.errorList(entry.getErrors('email')) }}
+
+    </div>
+   
+
+    <button class="btn btn-primary text-center mx-auto d-flex " type="submit">Let me know</button>
+</form>
+
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 p-0 overflow-hidden shadow-lg rounded-end-md">
+                        <!-- Img -->
+                        <img class="rounded-top-md card-img-size-600" src="../assets/images/rooms/example3.webp" alt="image of room">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+    
+  </main>
+{% endblock content %}

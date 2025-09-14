@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: bookingStatus
+instructions: null
+name: 'Booking status'
+searchable: false
+settings:
+  default: false
+  offLabel: Offline
+  onLabel: Live
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

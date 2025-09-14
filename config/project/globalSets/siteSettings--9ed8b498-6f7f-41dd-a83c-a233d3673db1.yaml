@@ -1,0 +1,30 @@
+fieldLayouts:
+  d21b5948-5e55-46a3-91be-242c7757c725:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-09-12T22:03:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 6703c440-9d6a-4259-a664-20a49d1de297 # Booking status
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 284cfda1-3064-4886-a645-241d62e47363
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Site settings'
+        uid: a3d80fb6-79b3-4b40-bbf0-09e96d429136
+        userCondition: null
+handle: siteSettings
+name: 'Site settings'
+sortOrder: 1

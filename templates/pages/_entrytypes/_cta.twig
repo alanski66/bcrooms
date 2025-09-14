@@ -1,0 +1,63 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+
+
+{% block content %}
+
+<section class="bg-light-subtle py-1 py-4 py-lg-8">
+  <div class="container text-center">
+    <div class="row align-items-center">
+      <div class="col offset-lg-2 col-lg-8 col-12">
+
+        <h1 class="d-flex-inline display-4 fw-semibold ">{{entry.title}}</h1>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-lg-8">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 offset-xl-1 col-md-12 col-12">
+        <div class="bg-primary py-6 px-6 px-xl-0 rounded-4 ">
+          <div class="row align-items-center">
+            <div class="offset-xl-1 col-xl-6 col-md-6 col-12">
+              <div>
+                <h2 class="display-4 text-white mb-5">What you need to know</h2>
+                <p class="d-none text-white fs-4">…and achieve their learning goals. With our expert tutors, your goals are
+                  closer
+                  than ever!</p>
+                  <h3 class="mb-3 text-white">To rent our rooms you must:</h3>
+                <ul class="list-grist-group-fush text-white fs-3 mb-5">
+                  <li class="list-group-item bg-transparent">
+                    <i class="bi bi-award fs-3 text-white"></i>
+                    be a registered therapist(BACP,UKCP,NCPS)
+                  </li>
+                  <li class="list-group-item bg-transparent">
+                    <i class="bi bi-file-earmark-post  text-white"></i>
+                    have professional indemnity insurance
+                  </li>
+                  
+                </ul>
+                
+                <a href="{{baseUrl}}terms" class="btn btn-light">Read our terms</a>
+              </div>
+            </div>
+            <div class="col-xl-5 col-md-6 col-12">
+              <div class="text-center">
+                <img src="../assets/images/education/course.png" alt="learning" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# {% include '_partials/_booking_enquiry_form.twig' %} #}
+
+
+{% include '_partials/early_access' %}
+{% endblock %}

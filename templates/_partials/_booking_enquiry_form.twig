@@ -1,0 +1,93 @@
+              <!-- Form -->
+{# Macro to help output errors: #}
+{% macro errorList(errors) %}
+    {% if errors %}
+        {{ ul(errors, { class: 'errors' }) }}
+    {% endif %}
+{% endmacro %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 ">
+        <div class="card shadow">
+          <div class="card-body p-6 d-flex flex-column justify-content-center">
+            
+<form method="post" action="" class="needs-validation " novalidate="" accept-charset="UTF-8">
+  
+    {# Hidden inputs required for the form to work: #}
+    {{ csrfInput() }}
+    {{ actionInput('guest-entries/save') }}
+  
+    {# Section for new entries: #}
+    {{ hiddenInput('sectionUid', 'bac0bf30-6584-41dd-b3ee-64d683d2e1c5') }}
+
+    {# Custom redirect URI: #}
+    {{ redirectInput('booking-enquiry-submitted/{uid}') }}
+
+    
+<h3>Book your tour</h3>
+<p class="mb-4">Use the form below to book a tour of our rooms and facilities.</p>
+    {# Entry properties and custom fields: #}
+    <!-- Input -->
+    <div class="mb-5">
+      <label class="form-label" for="title">Name</label>
+      {{ input('text', 'title', entry ? "Your name", { id: 'title', class:'form-control',placeholder:'Add your full name',required:'required' }) }}
+      {{ entry ? _self.errorList(entry.getErrors('title')) }}
+    </div>
+    <div class="mb-5">
+      <label class="form-label" for="phone">Your phone number</label>
+      {{ input('text', 'fields[phoneNumber]', entry ? entry.phoneNumber, { id: 'phone', class:'form-control',placeholder:'Add a number you can be called on',required:'required'  }) }}
+      {{ entry ? _self.errorList(entry.getErrors('phone')) }}
+    </div>
+    <div class="mb-5">
+      <label class="form-label" for="email">Your contact email</label>
+      {{ tag('input', {
+        email: entry ? entry.email,
+        id: 'email',
+        class:'form-control',
+        required:'required',
+        name: 'fields[email]',
+        type: 'email'
+    }) }}
+    {{ entry ? _self.errorList(entry.getErrors('email')) }}
+
+    </div>
+    <!-- radio-->
+    <div class="mb-5">
+      
+      {% set field = craft.app.fields.getFieldByHandle('contactPreference') %}
+      <label class="form-label">{{field.instructions}} </label>
+
+      
+        {% for option in field.options %}    
+        
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="fields[contactPreference]" required value="{{ option.value }}" id="contact{{option.value}}">
+            <label for="contact{{option.value}}" class="form-check-label">{{ option.label }}</label>
+          </div>
+      {% endfor %}
+      </div>
+  
+    <div class="mb-3">
+      <label class="form-label" for="body">Enquiry message</label>
+      {{ tag('textarea', {
+        text: entry ? entry.body,
+        id: 'body',
+        class:'form-control',
+        rows: '5',
+        required:'required',
+        name: 'fields[body]',
+    }) }}
+    {{ entry ? _self.errorList(entry.getErrors('body')) }}
+
+    </div>
+    
+   
+    {# ... #}
+
+    <button class="btn btn-primary text-center mx-auto d-flex " type="submit">SUBMIT</button>
+</form>
+</div>
+</div>
+</div>
+</div></div>

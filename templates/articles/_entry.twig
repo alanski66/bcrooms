@@ -1,0 +1,52 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+{% block content %}
+{% set asset = entry.featuredImage[0] ?? null %}
+<section class="py-7 py-lg-8 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-12 col-12 mb-2">
+          <div class="text-center mb-4">
+            <h1 class="displa fw-bold mb-4">{{ entry.title }}</h1>
+            {# <span class="mb-3 d-inline-block">4 min read</span> #}
+          </div>
+          <!-- Media -->
+         
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <!-- Image -->
+        <div class="col-xl-10 col-lg-10 col-md-12 col-12 mb-6">
+          <img src="{{asset.url}}" alt="blogpost" class="img-fluid rounded-3 w-100">
+        </div>
+      </div>
+
+      </div>
+      </section>
+      <section class="py-7 py-lg-8">
+        <div class="container">
+      <!-- content -->
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-12 col-12 mb-2 main-content">
+          <!-- Descriptions -->
+          <p class="lead">{{entry.intro}}</p>
+          {{entry.body}}
+
+          <!-- Media -->
+          <hr class="mt-8 mb-5">
+          <div class="d-flex justify-content-between align-items-center mb-5">
+            {# <div class="d-flex align-items-center">
+              <img src="{{ entry.author.photo.url ?? '' }}" alt="avatar" class="rounded-circle avatar-md">
+              <div class="ms-2 lh-1">
+                <h5 class="mb-1">{{entry.author}}</h5>
+                <span class="text-primary">Staff writer</span>
+              </div> #}
+            </div>
+           
+          </div>
+          {% include '_partials/early_access' %}
+        </div>
+      </div>
+    </div>
+ 
+  </section>
+  {% endblock content %}

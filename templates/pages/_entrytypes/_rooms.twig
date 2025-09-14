@@ -1,0 +1,140 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+
+
+{% block content %}
+
+<section class="py-8 bg-light-subtle">
+  <div class="container text-center">
+    <div class="row align-items-center">
+ 
+        <div class="col-12 ">
+          <h1 class="display-4 fw-semibold mb-5">{{entry.title}}</h1>
+                  <p class="lead mb-0 px-xl-5">Beautifully designed therapy rooms available for rent by the hour, day or longer.</p>
+
+        </div>
+    </div>
+  </div>
+</section>
+ <!-- With Captions -->
+ <div class="bd-example d-none">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    {# <ol class="carousel-indicators">
+      <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+    </ol> #}
+    <div class="carousel-inner">
+
+      {% for card in entry.cardImage %} 
+      {% set asset = card.image.one() %}
+      {% do asset.setTransform('heroBG') %}
+      <div class="carousel-item active">
+        <img src="{{ asset.url }}" width="{{ asset.width }}" height="auto" alt="{{ card.title }}"  class="d-block w-100 " >
+        <div class="carousel-caption d-none d-md-block">
+          <h3 class="text-white">{{ card.title }}</h3>
+          <p>{{card.shortSummary}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+</div>  
+
+<section class="py-8 bg-white">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for card in entry.cardImage %} 
+<div class="col">
+  <div class="card shadow-sm"> 
+            <img src="{{ card.image.one().url }}" alt="{{ card.title }}" class="img-fluid" style="max-height: 300px; object-fit: cover;">
+
+    <div class="card-body">
+      
+      <div class="d-fle justify-content-betwen align-items-start">
+        
+        <h4 class="text-body-secondary">{{card.title}}</h4>
+        <p class="card-text">{{card.shortSummary}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+ {% endfor %}
+      
+    </div>
+  </div>
+  </section>
+
+<div class="py-6">
+<div class="container">
+  <div class="row">
+    <div class="offset-xl-2 col-xl-8 col-12 ">
+      <div class="row">
+        <div class="col-md-12 col-12 mb-8">
+
+          <h2 class="mb-3 display-4 fw-bold ">Easy booking online
+          </h2>
+          <p class="h2">Everything you need to have a flexible practice that fits your work.</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-12">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-md-6 col-12 pe-lg-6 mb-lg-6 mb-4">
+              <!-- icon -->
+              <div class="icon-shape icon-lg bg-primary h3 text-white rounded-3 mb-4"><i
+                  class="bi bi-bookmark-check-fill "></i></div>
+              <!-- heading -->
+              <h2 class="fw-bold">No contracts</h2>
+              <!-- text -->
+              <p class="fs-4">Only pay for what you use - no contracts required so you only pay for what you have booked.</p>
+            </div>
+            <!-- col -->
+            <div class="col-md-6 col-12 pe-lg-6 mb-lg-6 mb-4">
+              <!-- icon -->
+              <div class="icon-shape icon-lg bg-primary h3 text-white rounded-3 mb-4"><i
+                  class="bi bi-calendar-plus-fill "></i></div>
+              <!-- heading -->
+              <h2 class="fw-bold">Flexible scheduling</h2>
+              <!-- text -->
+              <p class="fs-4">Book rooms weekly or fortnightly and decide how often they repeat.
+              </p>
+            </div>
+            <!-- col -->
+            <div class="col-md-6 col-12 pe-lg-6 mb-lg-6 mb-4">
+              <!-- icon -->
+              <div class="icon-shape icon-lg bg-primary h3 text-white rounded-3 mb-4"><i
+                  class="bi bi-alarm-fill "></i></div>
+              <!-- heading -->
+              <h2 class="fw-bold">No minimum hours</h2>
+              <!-- text -->
+              <p class="fs-4">No minimum booking hours are required - just book what you need.</p>
+            </div>
+            <!-- col -->
+            <div class="col-md-6 col-12 pe-lg-6 mb-lg-6 mb-4">
+              <!-- icon -->
+              <div class="icon-shape icon-lg bg-primary h3 text-white rounded-3 mb-4"><i
+                  class="bi bi-calendar-minus-fill "></i></div>
+              <!-- heading -->
+              <h2 class="fw-bold">Free cancellations</h2>
+              <!-- text -->
+              <p class="fs-4">It's free to cancel up to 48hrs before your booking - helps you manage holidays and absences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% include '_partials/early_access' %}
+{% endblock %}

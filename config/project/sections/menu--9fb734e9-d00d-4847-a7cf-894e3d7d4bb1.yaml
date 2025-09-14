@@ -1,0 +1,31 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: edd49f4f-4759-43d3-9247-25bcbcf399d9 # Menu
+handle: menu
+maxAuthors: 1
+name: Menu
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  c0ed5fcd-bf5e-4d52-9094-794f737b4080: # Brighton Counselling Rooms
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: ccd85465-e353-49b0-a7fa-e92786b68df7
+type: structure
