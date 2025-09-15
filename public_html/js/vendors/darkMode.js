@@ -1,8 +1,7 @@
 // Darkmode
-return;
 (() => {
     "use strict";
-
+return;
     const getStoredTheme = () => localStorage.getItem("theme");
     const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
 
