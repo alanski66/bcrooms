@@ -1,5 +1,5 @@
 // Darkmode
-
+return;
 (() => {
     "use strict";
 
