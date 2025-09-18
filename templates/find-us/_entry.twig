@@ -1,0 +1,41 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+
+
+{% block content %}
+<!-- generic -->
+<section class="bg-light-subtle py-1 py-4 py-lg-8">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col offset-md-2 col-md-8 col-12">
+        <div class="">
+          <h1 class="display-4 fw-semibold ">{{entry.title}}</h1>
+
+     
+        </div>
+        
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="my-5">
+  <div class="container ">
+    <div class="row">
+      <div class="col offset-md-2 col-md-8 col-12">
+        <div class="mb-8">
+
+          {{entry.body}}
+          <iframe width="701" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas"
+    src="https://maps.google.com/maps?width=701&amp;height=400&amp;hl=en&amp;q=60%20Lansdowne%20Place%20Brighton+(Brighton%20&amp;%20Hove%20Therapy%20Rooms)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+</iframe>
+        </div>
+        
+        
+      </div>
+
+    </div>
+
+  </div>
+</section>
+{% endblock %}
