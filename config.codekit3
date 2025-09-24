@@ -2801,6 +2801,14 @@
       "oAP" : "\/templates\/_partials\/_feature_hero.twig",
       "oF" : 0
     },
+    "\/templates\/_partials\/_local_seo.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/templates\/_partials\/_local_seo.twig",
+      "oF" : 0
+    },
     "\/templates\/_partials\/_map.twig" : {
       "cB" : 0,
       "ft" : 8192,
