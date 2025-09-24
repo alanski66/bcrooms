@@ -149,14 +149,16 @@
   <div class="container">
     <div class="row align-items-centr">
  <div class="offset-xl-2 col-xl-8 col-12 ">
-        <div class="row">
-          <div class="col-md-12 col-12 mb-8">
+        
         {% for block in entry.contentBlock %}
+        <div class="row">
+          <div class="col-md-12 col-12 mb-5">
         <h2>{{block.heading}}</h2>
         {{block.body}}
+      </div>
+      </div>
         {% endfor %}
-      </div>
-      </div>
+
       </div>
     </div>
   </div>
