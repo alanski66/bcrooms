@@ -151,9 +151,15 @@
  <div class="offset-xl-2 col-xl-8 col-12 ">
         
         {% for block in entry.contentBlock %}
+        {% set asset = block.image.one() ?? null %}
+
+
         <div class="row">
           <div class="col-md-12 col-12 mb-5">
         <h2>{{block.heading}}</h2>
+        {% if asset | length %}
+        <img src="{{asset.url}}" alt="{{block.heading}}" class="img-fluid rounded-3 w-100 mb-4">
+        {% endif %}
         {{block.body}}
       </div>
       </div>
