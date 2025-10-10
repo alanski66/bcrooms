@@ -5,7 +5,7 @@ name: Image
 searchable: false
 settings:
   allowSelfRelations: false
-  allowSubfolders: false
+  allowSubfolders: true
   allowUploads: true
   allowedKinds: null
   branchLimit: null

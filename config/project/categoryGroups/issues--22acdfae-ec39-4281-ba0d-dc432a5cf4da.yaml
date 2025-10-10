@@ -73,7 +73,7 @@ fieldLayouts:
 handle: issues
 name: Issues
 siteSettings:
-  c0ed5fcd-bf5e-4d52-9094-794f737b4080: # Brighton Counselling Rooms
+  c0ed5fcd-bf5e-4d52-9094-794f737b4080: # Brighton & Hove Therapy Space
     hasUrls: true
     template: content/category-list.twig
     uriFormat: 'issues/{slug}'

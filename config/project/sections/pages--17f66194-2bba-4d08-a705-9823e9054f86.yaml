@@ -24,7 +24,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  c0ed5fcd-bf5e-4d52-9094-794f737b4080: # Brighton Counselling Rooms
+  c0ed5fcd-bf5e-4d52-9094-794f737b4080: # Brighton & Hove Therapy Space
     enabledByDefault: true
     hasUrls: true
     template: pages/_entry.twig

@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: cc42c565-b876-46ad-a2cc-585c49d2f221 # Contact
+handle: findUs
+maxAuthors: 1
+name: 'Find us'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  c0ed5fcd-bf5e-4d52-9094-794f737b4080: # Brighton & Hove Therapy Space
+    enabledByDefault: true
+    hasUrls: true
+    template: find-us/_entry.twig
+    uriFormat: find-us
+type: single

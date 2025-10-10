@@ -11,7 +11,9 @@ settings:
     - seoPreview
     - seoTitle
     - seoDescription
+    - seoKeywords
     - seoImage
+    - seoImageDescription
   generalTabEnabled: '1'
   sitemapEnabledFields: ''
   sitemapTabEnabled: ''

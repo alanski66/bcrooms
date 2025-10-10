@@ -2708,6 +2708,14 @@
       "oAP" : "\/templates\/_base\/global-variables.twig",
       "oF" : 0
     },
+    "\/templates\/_form\/join.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/templates\/_form\/join.twig",
+      "oF" : 0
+    },
     "\/templates\/_inline-css\/site-fonts.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -3039,6 +3047,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/templates\/issues\/index.twig",
+      "oF" : 0
+    },
+    "\/templates\/join.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/templates\/join.twig",
       "oF" : 0
     },
     "\/templates\/login.twig" : {

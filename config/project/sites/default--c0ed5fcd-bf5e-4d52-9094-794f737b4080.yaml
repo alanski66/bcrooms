@@ -3,7 +3,7 @@ enabled: true
 handle: default
 hasUrls: true
 language: en-GB
-name: 'Brighton Counselling Rooms'
+name: 'Brighton & Hove Therapy Space'
 primary: true
-siteGroup: d0511a46-015b-4858-b016-9a9af57d2f74 # Brighton Counselling Rooms
+siteGroup: d0511a46-015b-4858-b016-9a9af57d2f74 # Brighton & Hove Therapy Space
 sortOrder: 1

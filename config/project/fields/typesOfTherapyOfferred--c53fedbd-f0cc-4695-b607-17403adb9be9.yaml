@@ -13,7 +13,7 @@ settings:
   showCardsInGrid: false
   showSiteMenu: true
   sources:
-    - 'section:49141ff0-5149-43b7-91d1-5c8d09a915ed' # Types of Therapy
+    - 'section:49141ff0-5149-43b7-91d1-5c8d09a915ed'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: list

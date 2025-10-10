@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  80809b57-ce4f-489e-8d39-48ef366bdae2:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-09-24T19:38:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: abb604ff-9714-4994-8d8a-42a82ba3b526 # Heading
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: af49ed63-3a13-41c5-bee2-866a36080f9b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-24T19:38:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4469bf0d-c096-401e-bff6-e93ec73701c0 # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: be7e7c18-f95c-4bfb-8d68-1c817119ea5c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-09-24T19:38:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: adccc74b-e492-4515-903f-798f62bb0256 # Body
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 84dbb1c9-e0b4-43df-81fa-86069fa72a00
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c8451c46-2d3a-4a37-a1a6-28e41a014728
+        userCondition: null
+handle: contentblock
+hasTitleField: false
+icon: null
+name: _contentblock
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
