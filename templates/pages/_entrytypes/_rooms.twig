@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<section class="py-8 bg-light-subtle">
+<section class="pt-8 pb-4 bg-light-subtle">
   <div class="container text-center">
     <div class="row align-items-center">
 
@@ -16,20 +16,25 @@
     </div>
   </div>
 </section>
-<!-- With Captions -->
-<div class="bd-example d-none">
+<!-- Carousel Captions -->
+<section class="py-4 bg-light-subtle">
+  <div class="container text-center">
+    <div class="row align-items-center">
+
+      <div class="col-12 ">
+<div class="bd-example ">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    {# <ol class="carousel-indicators">
+    <ol class="carousel-indicators">
       <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
       <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
       <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-    </ol> #}
+    </ol>
     <div class="carousel-inner">
 
       {% for card in entry.cardImage %}
       {% set asset = card.image.one() %}
       {% do asset.setTransform('heroBG') %}
-      <div class="carousel-item active">
+      <div class="carousel-item {% if loop.first %}active{% endif %}">
         <img src="{{ asset.url }}" width="{{ asset.width }}" height="auto" alt="{{ card.title }}"
           class="d-block w-100 ">
         <div class="carousel-caption d-none d-md-block">
@@ -50,35 +55,13 @@
     </a>
   </div>
 </div>
-
-<section class="py-8 bg-white">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      {% for card in entry.cardImage %}
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="{{ card.image.one().url }}" alt="{{ card.title }}" class="img-fluid"
-            style="max-height: 300px; object-fit: cover;">
-          <div class="mask text-light d-flex justify-content-center flex-column text-center"
-            style="background-color: rgba(0, 0, 0, 0.5)">
-            <h2 class="text-white">{{card.title}}</h2>
-            <p class="lead m-0">Currently being re-modelled</p>
-          </div>
-          <div class="card-body">
-
-            <div class="d-fle justify-content-betwen align-items-start">
-
-              <h4 class="text-body-secondary">{{card.title}}</h4>
-              <p class="card-text">{{card.shortSummary}}</p>
-            </div>
-          </div>
-        </div>
       </div>
-      {% endfor %}
-
     </div>
   </div>
 </section>
+
+
+
 
 <div class="py-6">
   <div class="container">
