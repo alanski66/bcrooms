@@ -4,119 +4,120 @@
 {% block content %}
 {# Macro to help output errors: #}
 {% macro errorList(errors) %}
-    {% if errors %}
-        {{ ul(errors, { class: 'errors' }) }}
-    {% endif %}
+{% if errors %}
+{{ ul(errors, { class: 'errors' }) }}
+{% endif %}
 {% endmacro %}
-<main
-<div class="py-8 my-4">
+<main <div class="py-8 my-4">
     <div class="container">
         <div class="row">
             <div class="offset-xl-1 col-xl-10 col-12 ">
                 <div class="row px-3 pt-3 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border smooth-shadow-sm">
-                    <div class="col-lg-6 p-4 p-md-6 pt-lg-0">
-                        <h1 class="display-4 fw-bold lh-1 mb-3">Get early access</h1>
-                        <p class="lead mb-5">We are opening October 1st 2025. Sign up to the
-                            waiting list to be the first to know when booking opens -
-                            stay in the loop!
+                    <div class="col-lg-8 offset-lg-2 p-4 p-md-6 pt-lg-0">
+                        <h1 class="text-center display-4 fw-bold lh-1 mb-3">Join now</h1>
+                        <p class="lead mb-5">Fill in the form below with details of your qualifications and insurance and we will set you up in our booking system and send you rental terms.
                         </p>
-                        
-{% macro errorList(errors) %}
-    {% if errors %}
-        <ul class="errors">
-            {% for error in errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endmacro %}
-{% from _self import errorList %}
 
-{% set form = wheelform.form({
-    id: 2,
-    redirect: 'enquiries/submitted',
-}) %}
+                        {% macro errorList(errors) %}
+                        {% if errors %}
+                        <ul class="errors">
+                            {% for error in errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% endmacro %}
+                        {% from _self import errorList %}
 
-{{ form.open() }}
-    {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
-    {{ wheelformErrors['recaptcha'] is defined ? errorList(wheelformErrors['recaptcha']) }}
-    {{ wheelformErrors['honeypot'] is defined ? errorList(wheelformErrors['honeypot']) }}
+                        {% set form = wheelform.form({
+                        id: 2,
+                        redirect: 'enquiries/submitted',
+                        }) %}
 
-    {% for field in form.fields %}
-    
-        
-    
-        {% switch field.type %}
-            {% case "checkbox" %}
-                <div class="form-checkbox">
-                {% for item in field.items %}
-                <label><input class="checkbox" type="checkbox" value="{{ item }}" {{values[field.name] is defined and item in values[field.name] ? ' checked="checked"' : '' }} name="{{field.name}}[]" id=""/>{{item}}</label>
-                {% endfor %}
-                </div>
-            {% case "radio" %}
-                <div class="form-radio">
-                {% for item in field.items %}
-                <input class="radio" type="radio" value="{{ item }}" {{values[field.name] is defined and item == values[field.name] ? ' checked="checked"' : '' }} name="{{field.name}}" id=""/>
-                <label>{{item}}</label>
-                {% endfor %}
-                </div>
-            {% case "select" %}
-                <div class="form-select">
-                <select id="wf-select" name="{{field.name}}" class="wf-field {{field.fieldClass}}">
-                {% for item in field.items %}
-                    <option value="{{ item }}" {{values[field.name] is defined and item == values[field.name] ? 'selected="selected"' : '' }}>{{item}}</option>
-                {% endfor %}
-                </select>
-                </div>
-            {% case "file" %}
-                <div class="form-group">
-                    <label for="file{{field.name|kebab}}">{{field.label}}</label>
-                    <input type="file" class="form-control" name="{{field.name}}" id="file{{field.name|kebab}}"/>
-                </div>
-            {% case "textarea" %}
-                <div class="form-group">
-                    <label>{{field.label}}</label>
-                    <textarea class="form-control" name="{{field.name}}" id="">{{ values[field.name] ?? '' }}</textarea>
-                </div>
-            {% case "list" %}
-                <div class="form-group">
-                    <label >{{field.label}}</label>
-                    <input type="text" name="{{field.name}}[]" id=""/>
-                    <script>//Javascript to handle adding fields</script>
-                </div>
-            {% default %}
-                <div class="form-group">
-                <label>{{field.label}}</label>
-                <input class="form-control" type="{{field.type}}" value="{{ values[field.name] ?? '' }}" name="{{field.name}}" id=""/>
-                </div>
-        {% endswitch %}
-        {{ wheelformErrors[field.name] is defined ? errorList(wheelformErrors[field.name]) }}
-    {% endfor %}
-    {% if form.recaptcha %}
-        <div>
-            <script src="https://www.google.com/recaptcha/api.js"></script>
-            <!-- Production captcha -->
-            <div class="g-recaptcha" data-sitekey="{{wheelform.getSettings('recaptcha_public')}}"></div>
-        </div>
-    {% endif %}
+                        {{ form.open() }}
+                        {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
+                        {{ wheelformErrors['recaptcha'] is defined ? errorList(wheelformErrors['recaptcha']) }}
+                        {{ wheelformErrors['honeypot'] is defined ? errorList(wheelformErrors['honeypot']) }}
 
-    <button class="btn btn-success" id="submit">Send</button>
+                        {% for field in form.fields %}
 
-</form>
+
+
+                        {% switch field.type %}
+                        {% case "checkbox" %}
+                        <div class="form-checkbox">
+                            {% for item in field.items %}
+                            <label><input class="checkbox" type="checkbox" value="{{ item }}" {{values[field.name] is
+                                    defined and item in values[field.name] ? ' checked="checked"' : '' }}
+                                    name="{{field.name}}[]" id="" />{{item}}</label>
+                            {% endfor %}
+                        </div>
+                        {% case "radio" %}
+                        <div class="form-radio">
+                            {% for item in field.items %}
+                            <input class="radio" type="radio" value="{{ item }}" {{values[field.name] is defined and
+                                item==values[field.name] ? ' checked="checked"' : '' }} name="{{field.name}}" id="" />
+                            <label>{{item}}</label>
+                            {% endfor %}
+                        </div>
+                        {% case "select" %}
+                        <div class="form-select">
+                            <select id="wf-select" name="{{field.name}}" class="wf-field {{field.fieldClass}}">
+                                {% for item in field.items %}
+                                <option value="{{ item }}" {{values[field.name] is defined and item==values[field.name]
+                                    ? 'selected="selected"' : '' }}>{{item}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        {% case "file" %}
+                        <div class="form-group mb-5">
+                            <label for="file{{field.name|kebab}}">{{field.label}}</label>
+                            <input type="file" class="form-control" name="{{field.name}}"
+                                id="file{{field.name|kebab}}" />
+                        </div>
+                        {% case "textarea" %}
+                        <div class="form-group mb-5">
+                            <label>{{field.label}}</label>
+                            <textarea class="form-control" name="{{field.name}}"
+                                id="">{{ values[field.name] ?? '' }}</textarea>
+                        </div>
+                        {% case "list" %}
+                        <div class="form-group mb-5">
+                            <label>{{field.label}}</label>
+                            <input type="text" name="{{field.name}}[]" id="" />
+                            <script>//Javascript to handle adding fields</script>
+                        </div>
+                        {% default %}
+                        <div class="form-group mb-5">
+                            <label>{{field.label}}</label>
+                            <input class="form-control" type="{{field.type}}" value="{{ values[field.name] ?? '' }}"
+                                name="{{field.name}}" id="" />
+                        </div>
+                        {% endswitch %}
+                        {{ wheelformErrors[field.name] is defined ? errorList(wheelformErrors[field.name]) }}
+                        {% endfor %}
+                        {% if form.recaptcha %}
+                        <div>
+                            <script src="https://www.google.com/recaptcha/api.js"></script>
+                            <!-- Production captcha -->
+                            <div class="g-recaptcha" data-sitekey="{{wheelform.getSettings('recaptcha_public')}}"></div>
+                        </div>
+                        {% endif %}
+
+                        <button class="btn btn-success" id="submit">SUBMIT</button>
+
+                        </form>
 
 
 
                     </div>
-                    <div class="col-lg-5 offset-lg-1 p-0 overflow-hidden shadow-lg rounded-end-md">
-                        <!-- Img -->
-                        <img class="rounded-top-md card-img-size-600" src="../assets/images/rooms/example3.webp" alt="image of room">
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-</div>
-  
-    
-  </main>
+    </div>
+
+
+</main>
 {% endblock content %}
