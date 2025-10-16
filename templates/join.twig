@@ -15,7 +15,7 @@
                 <div class="row px-3 pt-3 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border smooth-shadow-sm">
                     <div class="col-lg-8 offset-lg-2 p-4 p-md-6 pt-lg-0">
                         <h1 class="text-center display-4 fw-bold lh-1 mb-3">Join now</h1>
-                        <p class="lead mb-5">Fill in the form below with details of your qualifications and insurance and we will set you up in our booking system and send you rental terms.
+                        <p class="lead mt-4">Fill in the form below with details of your qualifications and insurance and we will set you up in our booking system and send you rental terms.
                         </p>
 
                         {% macro errorList(errors) %}
@@ -45,9 +45,9 @@
 
                         {% switch field.type %}
                         {% case "checkbox" %}
-                        <div class="form-checkbox">
+                        <div class="form-checkbox form-check">
                             {% for item in field.items %}
-                            <label><input class="checkbox" type="checkbox" value="{{ item }}" {{values[field.name] is
+                            <label><input class="form-check-input" type="checkbox" value="{{ item }}" {{values[field.name] is
                                     defined and item in values[field.name] ? ' checked="checked"' : '' }}
                                     name="{{field.name}}[]" id="" />{{item}}</label>
                             {% endfor %}
@@ -70,26 +70,32 @@
                             </select>
                         </div>
                         {% case "file" %}
-                        <div class="form-group mb-5">
-                            <label for="file{{field.name|kebab}}">{{field.label}}</label>
+                        <div class="form-group mt-4">
+                            <label for="file{{field.name|kebab}}">{{field.label}} *</label>
                             <input type="file" class="form-control" name="{{field.name}}"
                                 id="file{{field.name|kebab}}" />
                         </div>
                         {% case "textarea" %}
-                        <div class="form-group mb-5">
+                        <div class="form-group mt-4">
                             <label>{{field.label}}</label>
                             <textarea class="form-control" name="{{field.name}}"
                                 id="">{{ values[field.name] ?? '' }}</textarea>
                         </div>
                         {% case "list" %}
-                        <div class="form-group mb-5">
+                        <div class="form-group mt-4">
                             <label>{{field.label}}</label>
                             <input type="text" name="{{field.name}}[]" id="" />
                             <script>//Javascript to handle adding fields</script>
                         </div>
+                        {% case "html" %}
+                        <div class="form-group mt-4">
+                           <h3>Join Brighton Counselling Directory?</h3>
+                           <p>Brighton Counselling Directory is a free therapists directory aimed at connecting clients with qualified therapists in the Brighton & Hovearea.</p>
+                           <p>By joining, you will gain access to a network of professionals and resources to support your practice.</p>
+                        </div>
                         {% default %}
-                        <div class="form-group mb-5">
-                            <label>{{field.label}}</label>
+                        <div class="form-group mt-4">
+                            <label>{{field.label}}*</label>
                             <input class="form-control" type="{{field.type}}" value="{{ values[field.name] ?? '' }}"
                                 name="{{field.name}}" id="" />
                         </div>
@@ -104,7 +110,7 @@
                         </div>
                         {% endif %}
 
-                        <button class="btn btn-success" id="submit">SUBMIT</button>
+                        <button class="btn btn-secondary align-self-center mt-5" id="submit">SUBMIT</button>
 
                         </form>
 

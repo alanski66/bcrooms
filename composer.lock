@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25d48fe3d460ee1b9860ac65bf53bcad",
+    "content-hash": "eba71950ef95309cea8fc6812a54c728",
     "packages": [
         {
             "name": "acalvino4/craft-easy-image",
@@ -9534,11 +9534,11 @@
         },
         {
             "name": "xpertbot/craft-wheelform",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xpertbot/craft-wheelform/zipball/a3b1838dae8a70298462826d18d3e830358dee56",
-                "reference": "a3b1838dae8a70298462826d18d3e830358dee56",
+                "url": "https://api.github.com/repos/xpertbot/craft-wheelform/zipball/9d8e9d7f2dbf1e41ea753eb8c19776067137a322",
+                "reference": "9d8e9d7f2dbf1e41ea753eb8c19776067137a322",
                 "shasum": ""
             },
             "require": {
@@ -9582,7 +9582,7 @@
                 "docs": "https://github.com/xpertbot/craft-wheelform/blob/master/README.md",
                 "issues": "https://github.com/xpertbot/craft-wheelform/issues"
             },
-            "time": "2024-11-28T21:07:53+00:00"
+            "time": "2025-10-13T15:31:17+00:00"
         },
         {
             "name": "yiisoft/yii2",

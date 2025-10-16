@@ -1,0 +1,31 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+
+
+{% block content %}
+{# Macro to help output errors: #}
+{% macro errorList(errors) %}
+{% if errors %}
+{{ ul(errors, { class: 'errors' }) }}
+{% endif %}
+{% endmacro %}
+<main <div class="py-8 my-4">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-1 col-xl-10 col-12 ">
+                <div class="row px-3 pt-3 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border smooth-shadow-sm">
+                    <div class="col-lg-8 offset-lg-2 p-4 p-md-6 pt-lg-0">
+                        <h1 class="text-center display-4 fw-bold lh-1 mb-3">Get started</h1>
+                        
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</main>
+{% endblock content %}

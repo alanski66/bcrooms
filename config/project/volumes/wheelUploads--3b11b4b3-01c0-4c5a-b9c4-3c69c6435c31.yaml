@@ -1,0 +1,51 @@
+altTranslationKeyFormat: null
+altTranslationMethod: none
+fieldLayouts:
+  2402c5d5-2aa2-4da4-9c8c-c478aabaf1d0:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-10-14T11:13:00+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 34fe6265-26cb-4c10-b5ac-657be07c4672
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ccca8749-d24c-44bb-8f07-f94ab7c32d6c
+        userCondition: null
+fs: wheelUploads
+handle: wheelUploads
+name: 'Wheel Uploads'
+sortOrder: 7
+subpath: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

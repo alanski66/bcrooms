@@ -21,7 +21,7 @@
     "symfony/dom-crawler": "^7.1",
     "topshelfcraft/wordsmith": "5.0.0",
     "vlucas/phpdotenv": "^5.4.0",
-    "xpertbot/craft-wheelform": "4.0.3"
+    "xpertbot/craft-wheelform": "4.0.4"
   },
   "require-dev": {
     "craftcms/generator": "^2.1",

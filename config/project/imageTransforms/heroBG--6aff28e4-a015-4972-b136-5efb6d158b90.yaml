@@ -1,11 +1,11 @@
 fill: null
 format: webp
 handle: heroBG
-height: 500
+height: 575
 interlace: line
 mode: crop
 name: 'sHero background'
 position: center-center
 quality: 100
-upscale: true
-width: 900
+upscale: false
+width: 1000

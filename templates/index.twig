@@ -126,7 +126,17 @@
             <div class="col-md-6 col-xxl-5 col-xl-6 mb-xxl-6">
               <!--img-->
               <div>
-                <img src="../assets/images/rooms/example3.webp" alt="stpes 1" class="img-fluid rounded-4 w-100" />
+                {% set thumb = {
+  mode: 'crop',
+  width: 540,
+  height: 360,
+  quality: 85,
+  format: 'webp',
+  position: 'center-center'
+} %}
+
+
+                <img src="../assets/images/rooms/room3-clock.jpg" alt="stpes 1" class="img-fluid rounded-4 w-100" />
               </div>
             </div>
           </div>
@@ -165,14 +175,14 @@
                   <p class="mb-0 fs-3">Welcome your clients into a calm, private, and beautifully designed setting. Our therapy rooms create the perfect environment for counselling, psychotherapy, and wellness sessions.</p>
                 </div>
                 <div>
-                  <a href="{{baseUrl}}articles" class="btn btn-outline-secondary">Start learning</a>
+                  <a href="{{baseUrl}}articles" class="btn btn-secondary">GET STARTED</a>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-xxl-5 col-xl-6 mb-xxl-6">
               <!--img-->
               <div>
-                <img src="../assets/images/rooms/example2.jpg" alt="stpes 3"
+                <img src="../assets/images/rooms/room2-blue.jpg" alt="stpes 3"
                   class="img-fluid rounded-4 w-100" />
               </div>
             </div>
