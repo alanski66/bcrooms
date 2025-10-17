@@ -45,13 +45,13 @@
 
                         {% switch field.type %}
                         {% case "checkbox" %}
-                        <div class="form-checkbox form-check">
+                        {# <div class="form-checkbox form-check">
                             {% for item in field.items %}
                             <label><input class="form-check-input" type="checkbox" value="{{ item }}" {{values[field.name] is
                                     defined and item in values[field.name] ? ' checked="checked"' : '' }}
                                     name="{{field.name}}[]" id="" />{{item}}</label>
                             {% endfor %}
-                        </div>
+                        </div> #}
                         {% case "radio" %}
                         <div class="form-radio">
                             {% for item in field.items %}
@@ -88,11 +88,16 @@
                             <script>//Javascript to handle adding fields</script>
                         </div>
                         {% case "html" %}
-                        
-                        <div class="form-group mt-4">
-                           <h3>Join Brighton Counselling Directory?</h3>
-                           <p>Brighton Counselling Directory is a free therapists directory aimed at connecting clients with qualified therapists in the Brighton & Hovearea.</p>
-                           <p>By joining, you will gain access to a network of professionals and resources to support your practice.</p>
+                        <div class="card mt-4 p-3 mb-xl-0 card-hover border bg-light-subtle">
+                            <div class="form-group mt-4">
+                                <h3>Join Brighton Counselling Directory?</h3>
+                                <p><a class="text-underline" href="https://brightoncounsellingdirectory.co.uk">Brighton Counselling Directory</a> is a <strong>free</strong> therapists directory aimed at connecting clients with qualified therapists in the Brighton & Hove area.</p>
+                                <p>Click the checkbox below and provide a link to your online profile (e.g. your BACP profile) and we will add you to the directory for free.</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-checkbox form-check"><label><input class="form-check-input" type="checkbox" value="Add my profile for me from the link below" name="joinbcd[]" id="">Add my profile for me from the link below</label></div>
+                                <div class="form-group mt-4"><label>Use this profile link for the directory*</label><input class="form-control" type="text" value="" name="profile_link" id=""></div>
+                            </div>
                         </div>
                         {% default %}
                         <div class="form-group mt-4">
@@ -111,7 +116,7 @@
                         </div>
                         {% endif %}
 
-                        <button class="btn btn-secondary align-self-center mt-5" id="submit">SUBMIT</button>
+                        <button class="btn btn-secondary align-self-center mt-5" id="submit">JOIN</button>
 
                         </form>
 
