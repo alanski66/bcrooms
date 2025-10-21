@@ -35,7 +35,7 @@
       {% set asset = card.image.one() %}
       {% do asset.setTransform('heroBG') %}
       <div class="carousel-item {% if loop.first %}active{% endif %}">
-        <img src="{{ asset.url }}" width="{{ asset.width }}" height="auto" alt="{{ card.title }}"
+        <img src="{{ asset.url }}" width="{{ asset.width }}" height="auto" alt="{{asset.alt ?? "therapy room rental brighton and hove"}}"
           class="d-block w-100 ">
         <div class="carousel-caption d-none d-md-block">
           <h3 class="text-white">{{ card.title }}</h3>
@@ -141,7 +141,7 @@
           <div class="col-md-12 col-12 mb-5">
         <h2>{{block.heading}}</h2>
         {% if asset | length %}
-        <img src="{{asset.url}}" alt="{{block.heading}}" class="img-fluid rounded-3 w-100 mb-4">
+        <img src="{{asset.url}}" alt="{{asset.alt ?? block.heading}}" class="img-fluid rounded-3 w-100 mb-4">
         {% endif %}
         {{block.body}}
       </div>
