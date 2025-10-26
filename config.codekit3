@@ -2993,6 +2993,14 @@
       "oAP" : "\/templates\/enquiries\/enquiry-submitted.twig",
       "oF" : 0
     },
+    "\/templates\/enquiries\/join-submitted.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/templates\/enquiries\/join-submitted.twig",
+      "oF" : 0
+    },
     "\/templates\/enquiries\/submitted.twig" : {
       "cB" : 0,
       "ft" : 8192,
@@ -3079,6 +3087,14 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/templates\/pages\/_entry.twig",
+      "oF" : 0
+    },
+    "\/templates\/pages\/_entrytypes\/_agreement.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/templates\/pages\/_entrytypes\/_agreement.twig",
       "oF" : 0
     },
     "\/templates\/pages\/_entrytypes\/_cta.twig" : {

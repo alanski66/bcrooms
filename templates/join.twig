@@ -9,128 +9,184 @@
 {% endif %}
 {% endmacro %}
 <main>
-     <div class="py-8 my-4">
-    <div class="container">
-        <div class="row">
-            <div class="offset-xl-1 col-xl-10 col-12 ">
-                <div class="row px-3 pt-3 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border smooth-shadow-sm">
-                    <div class="col-lg-8 offset-lg-2 p-4 p-md-6 pt-lg-0">
-                        <h1 class="text-center display-4 fw-bold lh-1 mb-3">Join now</h1>
-                        <p class="lead mt-4">Fill in the form below with details of your qualifications and insurance and we will set you up in our booking system and send you rental terms.
-                        </p>
+    <div class="py-8 my-4">
+        <div class="container">
+            <div class="row">
+                <div class="offset-xl-1 col-xl-10 col-12 ">
+                    <div
+                        class="row px-3 pt-3 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border smooth-shadow-sm">
+                        <div class="col-lg-8 offset-lg-2 p-4 p-md-6 pt-lg-0">
+                            <h1 class="text-center display-4 fw-bold lh-1 mb-3">Join now</h1>
+                            <p class="lead mt-4">Fill in the form below with details of your qualifications and
+                                insurance, read and accept the terms and conditions and we can get you started.
+                            </p>
 
-                        {% macro errorList(errors) %}
-                        {% if errors %}
-                        <ul class="errors">
-                            {% for error in errors %}
-                            <li>{{ error }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                        {% endmacro %}
-                        {% from _self import errorList %}
-
-                        {% set form = wheelform.form({
-                        id: 2,
-                        redirect: 'enquiries/submitted',
-                        }) %}
-
-                        {{ form.open() }}
-                        {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
-                        {{ wheelformErrors['recaptcha'] is defined ? errorList(wheelformErrors['recaptcha']) }}
-                        {{ wheelformErrors['honeypot'] is defined ? errorList(wheelformErrors['honeypot']) }}
-
-                        {% for field in form.fields %}
-
-
-
-                        {% switch field.type %}
-                        {% case "checkbox" %}
-                        {# <div class="form-checkbox form-check">
-                            {% for item in field.items %}
-                            <label><input class="form-check-input" type="checkbox" value="{{ item }}" {{values[field.name] is
-                                    defined and item in values[field.name] ? ' checked="checked"' : '' }}
-                                    name="{{field.name}}[]" id="" />{{item}}</label>
-                            {% endfor %}
-                        </div> #}
-                        {% case "radio" %}
-                        <div class="form-radio">
-                            {% for item in field.items %}
-                            <input class="radio" type="radio" value="{{ item }}" {{values[field.name] is defined and
-                                item==values[field.name] ? ' checked="checked"' : '' }} name="{{field.name}}" id="" />
-                            <label>{{item}}</label>
-                            {% endfor %}
-                        </div>
-                        {% case "select" %}
-                        <div class="form-select">
-                            <select id="wf-select" name="{{field.name}}" class="wf-field {{field.fieldClass}}">
-                                {% for item in field.items %}
-                                <option value="{{ item }}" {{values[field.name] is defined and item==values[field.name]
-                                    ? 'selected="selected"' : '' }}>{{item}}</option>
+                            {% macro errorList(errors) %}
+                            {% if errors %}
+                            <ul class="errors">
+                                {% for error in errors %}
+                                <li>{{ error }}</li>
                                 {% endfor %}
-                            </select>
-                        </div>
-                        {% case "file" %}
-                        <div class="form-group mt-4">
-                            <label for="file{{field.name|kebab}}">{{field.label}} *</label>
-                            <input type="file" class="form-control" name="{{field.name}}"
-                                id="file{{field.name|kebab}}" />
-                        </div>
-                        {% case "textarea" %}
-                        <div class="form-group mt-4">
-                            <label>{{field.label}}</label>
-                            <textarea class="form-control" name="{{field.name}}"
-                                id="">{{ values[field.name] ?? '' }}</textarea>
-                        </div>
-                        {% case "list" %}
-                        <div class="form-group mt-4">
-                            <label>{{field.label}}</label>
-                            <input type="text" name="{{field.name}}[]" id="" />
-                            <script>//Javascript to handle adding fields</script>
-                        </div>
-                        {% case "html" %}
-                        <div class="card mt-4 p-3 mb-xl-0 card-hover border bg-light-subtle">
+                            </ul>
+                            {% endif %}
+                            {% endmacro %}
+                            {% from _self import errorList %}
+
+                            {% set form = wheelform.form({
+                            id: 2,
+                            redirect: 'enquiries/join-submitted',
+                            }) %}
+
+                            {{ form.open() }}
+                            {{ wheelformErrors['form'] is defined ? errorList(wheelformErrors['form']) }}
+                            {{ wheelformErrors['recaptcha'] is defined ? errorList(wheelformErrors['recaptcha']) }}
+                            {{ wheelformErrors['honeypot'] is defined ? errorList(wheelformErrors['honeypot']) }}
+
+                            {% for field in form.fields %}
+
+
+
+                            {% switch field.type %}
+                            {% case "checkbox" %}
+                            {# <div class="form-checkbox form-check">
+                                {% for item in field.items %}
+                                <label><input class="form-check-input" type="checkbox" value="{{ item }}"
+                                        {{values[field.name] is defined and item in values[field.name]
+                                        ? ' checked="checked"' : '' }} name="{{field.name}}[]" id="" />{{item}}</label>
+                                {% endfor %}
+                            </div> #}
+                            {% case "radio" %}
+                            <div class="form-radio">
+                                {% for item in field.items %}
+                                <input class="radio" type="radio" value="{{ item }}" {{values[field.name] is defined and
+                                    item==values[field.name] ? ' checked="checked"' : '' }} name="{{field.name}}"
+                                    id="" />
+                                <label>{{item}}</label>
+                                {% endfor %}
+                            </div>
+                            {% case "select" %}
+                            <div class="form-select">
+                                <select id="wf-select" name="{{field.name}}" class="wf-field {{field.fieldClass}}">
+                                    {% for item in field.items %}
+                                    <option value="{{ item }}" {{values[field.name] is defined and
+                                        item==values[field.name] ? 'selected="selected"' : '' }}>{{item}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            {% case "file" %}
                             <div class="form-group mt-4">
-                                <h3>Join Brighton Counselling Directory?</h3>
-                                <p><a class="text-underline" href="https://brightoncounsellingdirectory.co.uk">Brighton Counselling Directory</a> is a <strong>free</strong> therapists directory aimed at connecting clients with qualified therapists in the Brighton & Hove area.</p>
-                                <p>Click the checkbox below and provide a link to your online profile (e.g. your BACP profile) and we will add you to the directory for free.</p>
+                                <label for="file{{field.name|kebab}}">{{field.label}} *</label>
+                                <input type="file" class="form-control" name="{{field.name}}"
+                                    id="file{{field.name|kebab}}" />
                             </div>
-                            <div class="card-body">
-                                <div class="form-checkbox form-check"><label>
-                                    <input class="form-check-input" type="checkbox" value="Add my profile for me from the link below" name="joinbcd[]" id="">Add my profile for me from the link below</label></div>
-                                <div class="form-group mt-4"><label>Use this profile link for the directory*</label>
-                                    <input class="form-control" type="text" value="" name="profile_link" id=""></div>
+                            {% case "textarea" %}
+                            <div class="form-group mt-4">
+                                <label>{{field.label}}</label>
+                                <textarea class="form-control" name="{{field.name}}"
+                                    id="">{{ values[field.name] ?? '' }}</textarea>
                             </div>
-                        </div>
-                        {% default %}
-                        {% if field.name != "profile_link" %}
+                            {% case "list" %}
+                            <div class="form-group mt-4">
+                                <label>{{field.label}}</label>
+                                <input type="text" name="{{field.name}}[]" id="" />
+                                <script>//Javascript to handle adding fields</script>
+                            </div>
+                            {% case "html" %}
+                            <div class="card mt-4 p-3 mb-xl-0 card-hover border bg-light-subtle">
+                                <div class="form-group mt-4">
+                                    <h3>Join Brighton Counselling Directory?</h3>
+                                    <p><a class="text-underline"
+                                            href="https://brightoncounsellingdirectory.co.uk">Brighton Counselling
+                                            Directory</a> is a <strong>free</strong> therapists directory aimed at
+                                        connecting clients with qualified therapists in the Brighton & Hove area.</p>
+                                    <p>Click the checkbox below and provide a link to your online profile (e.g. your
+                                        BACP profile) and we will add you to the directory for free.</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-checkbox form-check"><label>
+                                            <input class="form-check-input" type="checkbox"
+                                                value="Add my profile for me from the link below" name="joinbcd[]"
+                                                id="">Add my profile for me from the link below</label></div>
+                                    <div class="form-group mt-4"><label>Use this profile link for the directory*</label>
+                                        <input class="form-control" type="text" value="" name="profile_link" id="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- i agree -->
+                            <div class="card mt-4 p-3 mb-xl-0 card-hover mx-autoborder bg-light-subtle">
+                                 <div class="card-body">
+                                     <a href="#" class="btn btn-outline-primary mb-4" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalScrollable">
+                                        Read the terms and conditions
+                                    </a>
+                                <div class="form-checkbox form-check" aria-label="I agree checkbox">
+                                   
+                                    <label>
+                                        <input class="form-check-input" type="checkbox" value="Yes I agree" name="Terms[]" id="">Yes I agree with the rental terms and conditions  
+                                        </label>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- end i agree -->
+                            {% default %}
+                            {% if field.name != "profile_link" %}
 
-                        <div class="form-group mt-4">
-                        <label>{{field.label}}*</label>
-                            <input class="form-control" type="{{field.type}}" value="{{ values[field.name] ?? '' }}"
-                                name="{{field.name}}" id="" />
+                            <div class="form-group mt-4">
+                                <label>{{field.label}}*</label>
+                                <input class="form-control" type="{{field.type}}" value="{{ values[field.name] ?? '' }}"
+                                    name="{{field.name}}" id="" />
+                            </div>
+                            {% endif %}
+                            {% endswitch %}
+                            
+                            {{ wheelformErrors[field.name] is defined ? errorList(wheelformErrors[field.name]) }}
+                            {% endfor %}
+                            {% if form.recaptcha %}
+                            <div>
+                                <script src="https://www.google.com/recaptcha/api.js"></script>
+                                <!-- Production captcha -->
+                                <div class="g-recaptcha" data-sitekey="{{wheelform.getSettings('recaptcha_public')}}">
+                                </div>
+                            </div>
+                            {% endif %}
+                            <div class="d-flex justify-content-center">
+                            <button class="btn btn-lg btn-secondary align-self-center mt-5" id="submit">JOIN</button>
+                            </div>
+                            </form>
                         </div>
-                        {% endif %}
-                        {% endswitch %}
-                        {{ wheelformErrors[field.name] is defined ? errorList(wheelformErrors[field.name]) }}
-                        {% endfor %}
-                        {% if form.recaptcha %}
-                        <div>
-                            <script src="https://www.google.com/recaptcha/api.js"></script>
-                            <!-- Production captcha -->
-                            <div class="g-recaptcha" data-sitekey="{{wheelform.getSettings('recaptcha_public')}}"></div>
-                        </div>
-                        {% endif %}
-                        <button class="btn btn-secondary align-self-center mt-5" id="submit">JOIN</button>
-                        </form>
+
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    </div>
+<!-- Modal -->
+                                <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalScrollableTitle">Rental T&C
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {% set entry = craft.entries.id(2420).one() %}
+                                                {# <h5>{{ entry.title }}</h5> #}
+                                                <p>{{ entry.body }}</p>
 
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end modal -->
 
 </main>
 {% endblock content %}
