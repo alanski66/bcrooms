@@ -126,17 +126,16 @@
             <div class="col-md-6 col-xxl-5 col-xl-6 mb-xxl-6">
               <!--img-->
               <div>
-                {% set thumb = {
-  mode: 'crop',
-  width: 540,
-  height: 360,
-  quality: 85,
-  format: 'webp',
-  position: 'center-center'
-} %}
+                       {% set asset = entry.image2.one() %}
+                {% if asset %}
+                <img src="{{ asset.getUrl({ mode: 'crop', width: 520, height:310, quality: 75, format: 'webp', position: 'center-center' }) }}"
+                  alt="{{ asset.alt ?? 'therapy room' }}"
+                  class="img-fluid rounded-4 w-100" />
+                {% endif %}
 
 
-                <img src="{{baseUrl}}assets/images/rooms/room3-clock.jpg" alt="stpes 1" class="img-fluid rounded-4 w-100" />
+
+                {# <img src="{{baseUrl}}assets/images/rooms/room3-clock.jpg" alt="stpes 1" class="img-fluid rounded-4 w-100" /> #}
               </div>
             </div>
           </div>
@@ -144,8 +143,12 @@
             <div class="col-md-6 col-xxl-5 offset-xxl-1 col-xl-5 offset-xl-1 order-md-1 order-2 mb-xxl-6">
               <!--img-->
               <div>
-                <img src="../assets/images/mentor/mento-step-two.jpg" alt="stpes 2" class="img-fluid rounded-4 w-100" />
-              </div>
+    {% set asset = entry.image3.one() %}
+                {% if asset %}
+                <img src="{{ asset.getUrl({ mode: 'crop', width: 520, height:310, quality: 75, format: 'webp', position: 'center-center' }) }}"
+                  alt="{{ asset.alt ?? 'therapy room' }}"
+                  class="img-fluid rounded-4 w-100" />
+                {% endif %}              </div>
             </div>
             <div class="col-md-6 col-xxl-4 offset-xxl-1 col-xl-5 offset-xl-1 order-xl-2 order-1 mb-xxl-6">
               <div class="d-flex flex-column gap-4">
@@ -182,8 +185,12 @@
             <div class="col-md-6 col-xxl-5 col-xl-6 mb-xxl-6">
               <!--img-->
               <div>
-                <img src="../assets/images/rooms/room2.jpg" alt="stpes 3"
+                {% set asset = entry.image4.one() %}
+                {% if asset %}
+                <img src="{{ asset.getUrl({ mode: 'crop', width: 520, height:310, quality: 75, format: 'webp', position: 'center-center' }) }}"
+                  alt="{{ asset.alt ?? 'therapy room' }}"
                   class="img-fluid rounded-4 w-100" />
+                {% endif %}
               </div>
             </div>
           </div>
@@ -201,8 +208,12 @@
         <div class="offset-xl-1 col-xl-4 col-lg-6 d-none d-lg-block">
           <!--img-->
           <div class="position-relative">
-            <img src="../assets/images/mentor/mentor-img-6.jpg" alt="mentor img" class="img-fluid w-100 rounded-4" />
-
+  {% set asset = entry.image5.one() %}
+                {% if asset %}
+                <img src="{{ asset.getUrl({ mode: 'crop', width: 410, height:410, quality: 75, format: 'webp', position: 'center-center' }) }}"
+                  alt="{{ asset.alt ?? 'therapy room' }}"
+                  class="img-fluid rounded-4 w-100" />
+                {% endif %}
            </div>
         </div>
         <div class="col-xl-6 col-lg-5 offset-lg-1 offset-xl-1">
@@ -270,7 +281,7 @@
                 </div>
               </div>
               <div>
-                <a href="{{baseUrl}}enquiry" class="btn btn-primary">Coming soon</a>
+                <a href="https://www.brightoncounsellingdirectory.co.uk/" class="btn btn-primary">Join Brighton Counselling Directory</a>
               </div>
             </div>
           </div>
