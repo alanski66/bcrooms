@@ -1,4 +1,4 @@
-dateModified: 1760631850
+dateModified: 1790844770
 elementSources:
   craft\elements\Entry:
     -
@@ -221,7 +221,6 @@ meta:
     17f66194-2bba-4d08-a705-9823e9054f86: Pages # Pages
     22acdfae-ec39-4281-ba0d-dc432a5cf4da: Issues # Issues
     36dc80ef-c566-4b45-a3fa-53319d7ab7ba: 'Member organisation' # Member organisation
-    39db330b-457a-4938-8ab1-b93536a6aa9b: Simple # Simple
     43f6ee32-dbe7-405f-ba2a-3fbe8b2dd0ae: SEO # SEO
     45f99bef-ed2c-476b-a382-35d04507ba5e: Icons # Icons
     48e5cd5f-156a-4a9b-9323-1139b7dda01f: 'Phone number' # Phone number
@@ -288,7 +287,7 @@ plugins:
   ckeditor:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.0.0
+    schemaVersion: 5.6.0.0
   codefield:
     edition: standard
     enabled: true
@@ -308,7 +307,7 @@ plugins:
   feed-me:
     edition: standard
     enabled: true
-    schemaVersion: 5.1.1
+    schemaVersion: 5.14.0
   guest-entries:
     edition: standard
     enabled: true
@@ -410,5 +409,5 @@ system:
   live: true
   name: 'Brighton & Hove Therapy Space'
   retryDuration: null
-  schemaVersion: 5.8.0.3
+  schemaVersion: 5.11.0.2
   timeZone: Africa/Casablanca
